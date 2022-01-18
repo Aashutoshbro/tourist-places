@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500&display=swap');
 
 html {
     scroll-behavior: smooth;
@@ -10,18 +11,43 @@ html {
     scroll-snap-type: y mandatory;
 }
 
-li, a, button {
+
+a {
     font-family: 'Lato', sans-serif;   
     font-weight: 500;
     font-size: 20px;
-    color: #98c1d9;
+    color: #8dc1df;
+    text-decoration: none;
+    display: inline-flex;
+}
+
+a:hover {
+   color: #292929;
+
+}
+
+.container .nav_links a {
+    margin-left: 20px;
+}
+
+.container .nav_links a:hover {
+    color: #539ac4;
+}
+
+
+
+li, button {
+    font-family: 'Lato', sans-serif;   
+    font-weight: 500;
+    font-size: 20px;
+    color: #8dc1df;
     text-decoration: none;
     display: inline-flex;
     padding:6px;
     margin-left:20px;
 }
 
-li:hover, a:hover, button:hover {
+li:hover, button:hover {
     color: #539ac4;
 }
 
@@ -49,8 +75,8 @@ header {
 .logo {
     cursor: pointer;
     font-family: 'Lato', sans-serif;
-    font-size: 25px;
-    color: #e0fbfc;
+    font-size: 28px;
+    color: #4169e1;
     font-weight: bold;
 }
 
@@ -91,12 +117,288 @@ header {
 
 }
 .a{
-    background:red;
+    background:#222f3e;
 }
-.b{background: lightgreen;}
+.b{
+    background:#222f3e;
+    padding-top: 80px;
+    height: 100vh;
+}
 
 .c{
     background:red;
 }
-.d{background: lightgreen;}
+
  
+.a {
+    position: relative;
+
+}
+.places-desc {
+    display: flex;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    top: 10px;
+    left: 20px;
+        
+}
+.places-desc{
+    position: relative;
+    top: 6%;
+    font-family: 'Raleway', sans-serif;
+    font-size: 22px;
+    color:white;
+}
+.img-container{
+    position: relative;
+    width: 60%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Raleway', sans-serif;
+    top: 12%;
+}
+
+.img-container .box {
+    position: relative;
+    width: 275px;
+    height: 275px;
+    overflow: hidden;
+    transition: 0.5s;
+    margin:6px;
+    
+}
+
+.img-container .box:hover {
+    z-index: 1;
+    transform: scale(1.25);
+    box-shadow: 0 25px 40px rgba(0, 0, 0, .5);
+}
+
+.img-container .box .imgBox {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.img-container .box .imgBox:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: linear-gradient(180deg, #f00, #000);
+    mix-blend-mode: multiply;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.img-container .box:hover .imgBox:before {
+    opacity: 1;
+}
+
+
+.img-container .box .imgBox img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.img-container .box .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    padding: 20px;
+    align-items: flex-end;
+}
+
+.img-container .box .content h2 {
+    color: #fff;
+    transition: 0.5s;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    font-size: 20px;
+    transform: translateY(300px);
+}
+
+.img-container .box:hover .content h2 {
+   transform: translateY(0);
+    transition-delay: 0.2s;
+}
+
+.img-container .box .content p {
+    color: #fff;
+    transform: translateY(200px);
+    transition: 0.5s;
+    font-size: 14px;
+}
+
+.img-container .box:hover .content p {
+    transform: translateY(0);
+    transition-delay: 0.3s;
+}
+
+
+.b h1 {
+    color:royalblue;
+    padding-bottom: 120px;
+    text-transform: uppercase;
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    letter-spacing: 5px;
+}
+
+.b .gallery {
+    width: 1000px;
+    margin: 0 auto;
+  
+    position: relative;
+  }
+  
+.b .gallery .gallery__photo {
+    width: 250px;
+    height: 250px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    border-radius: 2px;
+    position: absolute;
+    transition: all 0.2s;
+    z-index: 10;
+    object-fit: cover;
+    outline-offset: 20px;
+  }
+
+  .b .gallery .gallery__photo--p1 {
+    top: 0;
+    left: 0;
+  }
+  
+  .b .gallery .gallery__photo--p2 {
+    top: 0;
+    right: 0;
+    z-index: 1;
+  }
+  
+  .b .gallery .gallery__photo--p3 {
+    top: 40px;
+    left: 20%;
+  }
+  
+  .b .gallery .gallery__photo--p4 {
+    top: 60px;
+    left: 40%;
+  }
+  
+  .b .gallery .gallery__photo--p5 {
+    top: 40px;
+    left: 60%;
+    z-index: 2;
+  }
+  
+  .b .gallery .gallery__photo:hover {
+    /* outline: 15px solid #14addc; */
+    /* border-radius: 5px; */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    width: 350px;
+    height: 350px;
+    transform: scale(1.05) translateY(-20px);
+    z-index: 20;
+  }
+
+  .b .gallery:hover .gallery__photo:not(:hover) {
+    transform: scale(0.9);
+  }
+  
+  .viewmore{
+      position: relative;
+      text-align: center;
+      top:60%;
+      left:1%;
+  }
+  .view-btn{
+    padding: 9px 25px;
+    border-radius:50px;
+    background-color: royalblue;
+    border: none;
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+  }
+
+  .view-btn:hover {
+    background-color: royalblue;
+    color: rgba(255, 255, 255, 0.8);
+
+  }
+
+  main {
+    max-width: 520px;
+    margin: 0 auto;
+  }
+  summary {
+    font-size: 1.25rem;
+    font-weight: 600;
+    background-color: #fff;
+    color: #333;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    outline: none;
+    border-radius: 0.25rem;
+    text-align: left;
+    cursor: pointer;
+    position: relative;
+  }
+  details[open] summary ~ * {
+    animation: sweep .5s ease-in-out;
+  }
+  @keyframes sweep {
+    0%    {opacity: 0; margin-top: -10px}
+    100%  {opacity: 1; margin-top: 0px}
+  }
+  details > summary::after {
+    position: absolute;
+    content: "+";
+    right: 20px;
+  }
+  details[open] > summary::after {
+    position: absolute;
+    content: "-";
+    right: 20px;
+  }
+  details > summary::-webkit-details-marker {
+    display: none;
+  }
+.faq-de{
+    text-align: center;
+    position: relative;
+    top: 10%;
+    font-family: 'Raleway', sans-serif;
+    color:white;
+    text-decoration: underline;
+}
+.in-main{
+
+    position: relative;
+    top:20%;
+    font-family: 'Raleway', sans-serif;
+}
+.c{
+    background:#222f3e;
+}
+.faq__content{
+    color: white;
+    font-size:15px;
+    margin-bottom:10px;
+}
